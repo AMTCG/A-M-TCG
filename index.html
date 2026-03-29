@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PokéVault</title>
+  <title>A&M TCG</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -10,26 +10,36 @@
 <body>
 
 <nav>
-  <h2>PokéVault</h2>
+  <h2>A&M TCG</h2>
   <button class="toggle" onclick="toggleMode()">🌗</button>
 </nav>
 
 <section class="hero">
   <h1>Rare Pokémon Collection</h1>
-  <p>Digital gallery of iconic creatures</p>
-  <button>Explore</button>
+  <p>Explore the digital Grail Gallery of iconic Pokémon</p>
+  <div class="buttons">
+    <button onclick="scrollToGallery()">Explore</button>
+    <button class="tiktok" onclick="goToTikTok()">Sleduj nás na TikToku</button>
+  </div>
 </section>
 
 <section class="grid">
-  <div class="card">Charizard 🔥</div>
-  <div class="card">Pikachu ⚡</div>
-  <div class="card">Mewtwo 🧠</div>
+  <div class="card"><img src="images/Mega Charizard x ex.png" alt="Mega Charizard x ex"><p>Mega Charizard x ex 🔥</p></div>
+  <div class="card"><img src="images/Crobat.png" alt="Crobat"><p>Crobat 🧠</p></div>
+  <div class="card"><img src="images/Mimikyu.png" alt="Mimikyu"><p>Mimikyu 🧠</p></div>
+  <div class="card"><img src="images/Mega Venosaur ex.png" alt="Mega Venosaur ex"><p>Mega Venosaur ex 🌱</p></div>
+  <div class="card"><img src="images/Tinkaton ex.png" alt="Tinkaton"><p>Tinkaton ex 🧠</p></div>
+  <div class="card"><img src="images/Tyranitar ex.png" alt="Tyranitar ex"><p>Tyranitar ex 🐉</p></div>
+  <div class="card"><img src="images/Mega Gengar ex.png" alt="Mega Gengar Ex"><p>Mega Gengar ex 👻</p></div>
+  <div class="card"><img src="images/Alakazam.png" alt="Alakazam"><p>Alakazam ✨</p></div>
+  <div class="card"><img src="images/dragonite.png" alt="Dragonite"><p>Dragonite 🐉</p></div>
+  <div class="card"><img src="images/Ice Rider Calyrex.png" alt="Ice Rider Calyrex"><p>Ice Rider Calyrex ❄️</p></div>
 </section>
 
 <section class="about">
   <div>
-    <h2>About Me</h2>
-    <p>I create modern Pokémon galleries with premium design.</p>
+    <h2>About A&M TCG</h2>
+    <p>We create modern Pokémon galleries with premium design for collectors and enthusiasts.</p>
   </div>
 </section>
 
@@ -39,6 +49,5 @@
 </section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
