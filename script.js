@@ -26,3 +26,19 @@ cards.forEach((card, index) => {
   const randomDuration = 5 + Math.random() * 10;
   card.style.animationDuration = randomDuration + 's';
 });
+// Filtrovanie kariet podľa názvu
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.grid .card');
+
+searchInput.addEventListener('input', function() {
+  const filter = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+    const cardName = card.querySelector('p').textContent.toLowerCase();
+    if (cardName.includes(filter)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
