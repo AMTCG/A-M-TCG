@@ -125,3 +125,34 @@ button.tiktok:hover {
   text-align:center;
   padding:80px 20px;
 }
+.subscribe-box{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:20px;
+}
+
+.subscribe-box input{
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  width:220px;
+  font-size:14px;
+}
+
+.subscribe-btn{
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#ff4d6d;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+.subscribe-btn:hover{
+  transform:scale(1.1);
+  background:#ff2e55;
+  box-shadow:0 5px 20px rgba(255,77,109,0.5);
+}
