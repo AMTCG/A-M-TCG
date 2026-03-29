@@ -189,7 +189,7 @@ button.tiktok:hover {
   background: #ff2e55;
 }
 nav .logo {
-  height: 75px;  /* nastav výšku loga */
+  height: 50px;  /* nastav výšku loga */
   width: auto;   /* zachová proporcie */
 }
 .footer {
