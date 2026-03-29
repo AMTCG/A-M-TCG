@@ -1,4 +1,4 @@
-/* Farby */
+/* Farby a tmavý režim */
 :root {
   --bg: #F8F9FB;
   --text: #111;
@@ -21,11 +21,16 @@ body {
   transition: 0.3s;
 }
 
-/* NAV */
+/* Navigácia */
 nav {
   display:flex;
   justify-content:space-between;
   padding:20px 40px;
+}
+
+nav .logo {
+  height:50px;
+  width:auto;
 }
 
 .toggle {
@@ -36,204 +41,59 @@ nav {
   cursor:pointer;
 }
 
-/* HERO */
-.hero {
-  text-align:center;
-  padding:120px 20px;
-}
-
-.hero h1 {
-  font-size:64px;
-}
-
-.hero p {
-  opacity:0.7;
-  margin-bottom:30px;
-}
-
+/* Hero */
+.hero { text-align:center; padding:120px 20px; }
+.hero h1 { font-size:64px; }
+.hero p { opacity:0.7; margin-bottom:30px; }
 .buttons button {
-  margin: 0 10px;
-  padding:12px 24px;
-  border:none;
-  border-radius:12px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
+  margin:0 10px; padding:12px 24px; border:none; border-radius:12px;
+  font-weight:600; cursor:pointer; transition:0.3s;
 }
+.buttons button:nth-child(1) { background:var(--accent); color:white; }
+.buttons button:nth-child(1):hover { transform:scale(1.05); }
+button.tiktok { background:#69C9D0; color:white; }
+button.tiktok:hover { background:#45AAB8; transform:scale(1.05); }
 
-.buttons button:nth-child(1) {
-  background: var(--accent);
-  color:white;
-}
-
-.buttons button:nth-child(1):hover {
-  transform: scale(1.05);
-}
-
-button.tiktok {
-  background: #69C9D0;
-  color:white;
-}
-
-button.tiktok:hover {
-  background: #45AAB8;
-  transform: scale(1.05);
-}
-
-/* GRID - Grail Gallery efekty */
+/* Grid */
 .grid {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap:24px;
-  padding:40px;
+  gap:24px; padding:40px;
 }
-
 .card {
-  background:var(--card);
-  backdrop-filter: blur(20px);
-  border-radius:20px;
-  padding:16px;
-  transition:0.5s;
-  text-align:center;
+  background:var(--card); backdrop-filter:blur(20px); border-radius:20px; padding:16px;
+  transition:0.5s; text-align:center;
 }
+.card img { width:100%; border-radius:12px; transition:0.5s; }
+.card:hover { transform:scale(1.08) rotate(-2deg); box-shadow:0 20px 30px rgba(0,0,0,0.25); }
+.card:hover img { transform:scale(1.1) rotate(-2deg); }
 
-.card img {
-  width:100%;
-  border-radius:12px;
-  transition:0.5s;
-}
-
-.card:hover {
-  transform: scale(1.08) rotate(-2deg);
-  box-shadow:0 20px 30px rgba(0,0,0,0.25);
-}
-
-.card:hover img {
-  transform: scale(1.1) rotate(-2deg);
-}
-
-/* ABOUT */
-.about {
-  display:flex;
-  gap:40px;
-  padding:80px 40px;
-  flex-wrap:wrap;
-}
-
-/* CTA */
-.cta {
-  text-align:center;
-  padding:80px 20px;
-}
-.subscribe-box{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:20px;
-}
-
-.subscribe-box input{
-  padding:12px;
-  border-radius:8px;
-  border:none;
-  width:220px;
-  font-size:14px;
-}
-
-.subscribe-btn{
-  padding:12px 20px;
-  border:none;
-  border-radius:8px;
-  background:#ff4d6d;
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  transition:all 0.3s ease;
-}
-
-.subscribe-btn:hover{
-  transform:scale(1.1);
-  background:#ff2e55;
-  box-shadow:0 5px 20px rgba(255,77,109,0.5);
-}
-/* POHYBLIVÉ KARTY */
+/* Padajúce karty */
 .card-bg {
-  position: absolute;       /* karty sa môžu pohybovať po celej stránke */
-  width: 80px;              /* šírka karty */
-  height: 120px;            /* výška karty */
-  background-size: cover;   /* obrázok sa roztiahne na celý div */
-  top: -150px;              /* začnú nad obrazovkou */
-  left: calc(10% + 80vw * random()); /* náhodná horizontálna pozícia (upravíme na JS) */
-  animation: fall 10s linear infinite; /* animácia pohybu nadol */
+  position:absolute; width:80px; height:120px; background-size:cover; top:-150px;
+  animation:fall linear infinite;
 }
+@keyframes fall { 0%{transform:translateY(0) rotate(0deg);} 100%{transform:translateY(100vh) rotate(360deg);} }
 
-/* animácia pádu */
-@keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(100vh) rotate(360deg); }
-}
-.my-button {
-  display: inline-block;
-  padding: 12px 24px;
-  margin-top: 15px;  /* oddelenie od formulára */
-  background: #ff4d6d;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.my-button:hover {
-  transform: scale(1.05);
-  background: #ff2e55;
-}
-nav .logo {
-  height: 50px;  /* nastav výšku loga */
-  width: auto;   /* zachová proporcie */
-}
-.footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 16px;
-  color: var(--text);
-}
-
-.footer hr {
-  border: 1px solid var(--accent);
-  margin-bottom: 10px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-/* Vyhľadávanie kariet */
-.search {
-  text-align: center;
-  margin: 30px 0;
-}
-
+/* Vyhľadávanie */
+.search { text-align:center; margin:30px 0; }
 #searchInput {
-  width: 250px;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid var(--accent);
-  outline: none;
-  transition: 0.3s;
+  width:250px; padding:10px 15px; font-size:16px; border-radius:8px; border:1px solid var(--accent); outline:none; transition:0.3s;
 }
+#searchInput:focus { border-color:#ff4d6d; box-shadow:0 0 5px #ff4d6d; }
 
-#searchInput:focus {
-  border-color: #ff4d6d;
-  box-shadow: 0 0 5px #ff4d6d;
-}
+/* Subscribe */
+.subscribe-box { display:flex; justify-content:center; gap:10px; margin-top:20px; }
+.subscribe-box input { padding:12px; border-radius:8px; border:none; width:220px; font-size:14px; }
+.subscribe-btn { padding:12px 20px; border:none; border-radius:8px; background:#ff4d6d; color:white; font-weight:600; cursor:pointer; transition:all 0.3s ease; }
+.subscribe-btn:hover { transform:scale(1.1); background:#ff2e55; box-shadow:0 5px 20px rgba(255,77,109,0.5); }
+
+/* Footer */
+.footer { text-align:center; padding:20px; margin-top:40px; font-size:16px; color:var(--text); }
+.footer hr { border:1px solid var(--accent); margin-bottom:10px; width:80%; margin:auto; }
+.footer a { color:var(--accent); text-decoration:none; font-weight:600; }
+.footer a:hover { text-decoration:underline; }
+
+/* Tlačidlo na začiatku */
+.my-button { display:inline-block; padding:12px 24px; margin:20px; background:#ff4d6d; color:white; border-radius:8px; text-decoration:none; font-weight:600; transition:all 0.3s ease; }
+.my-button:hover { transform:scale(1.05); background:#ff2e55; }
