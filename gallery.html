@@ -1,143 +1,56 @@
-/* Farby a tmavý režim */
-:root {
-  --bg: #F8F9FB;
-  --text: #111;
-  --card: rgba(255,255,255,0.6);
-  --accent: #4F46E5;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-body.dark {
-  --bg: #0B0B0F;
-  --text: #EAEAEA;
-  --card: rgba(255,255,255,0.05);
-  --accent: #8B5CF6;
-}
+<!-- Navigácia -->
+<nav class="navbar">
+  <a href="index.html"><img src="images/AMLOGO.jpeg" alt="A&M TCG Logo" class="logo"></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="https://www.cardmarket.com/en/Pokemon" target="_blank">Card Value</a>
+    <a href="https://www.tiktok.com/@ampokemon" target="_blank">TikTok</a>
+    <a href="app.apk" download>Download App</a>
+  </div>
+  <button class="toggle" onclick="toggleMode()">🌗</button>
+</nav>
 
-body {
-  margin:0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.3s;
-}
+<!-- Hero sekcia -->
+<section class="hero">
+  <h1>Full Pokémon Gallery</h1>
+  <p>Explore all our Pokémon cards</p>
+</section>
 
-/* Navigácia */
-nav {
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-}
+<!-- Vyhľadávanie -->
+<section class="search">
+  <input type="text" id="searchInput" placeholder="Search Pokémon cards 🔍" />
+</section>
 
-nav .logo {
-  height:50px;
-  width:auto;
-}
+<!-- Grid galéria -->
+<section class="grid">
+  <div class="card"><img src="images/Mega Charizard x ex.jpeg" alt="Mega Charizard x ex"><p>Mega Charizard x ex 🔥</p></div>
+  <div class="card"><img src="images/Crobat.jpeg" alt="Crobat"><p>Crobat 🧠</p></div>
+  <div class="card"><img src="images/Mimikyu.jpeg" alt="Mimikyu"><p>Mimikyu 🧠</p></div>
+  <div class="card"><img src="images/Mega Venosaur ex.jpeg" alt="Mega Venosaur ex"><p>Mega Venosaur ex 🌱</p></div>
+  <div class="card"><img src="images/Tinkaton ex.jpeg" alt="Tinkaton ex"><p>Tinkaton ex 🧠</p></div>
+  <div class="card"><img src="images/Tyranitar ex.jpeg" alt="Tyranitar ex"><p>Tyranitar ex 🐉</p></div>
+  <div class="card"><img src="images/Mega Gengar ex.jpeg" alt="Mega Gengar Ex"><p>Mega Gengar ex 👻</p></div>
+  <div class="card"><img src="images/Alakazam.jpeg" alt="Alakazam"><p>Alakazam ✨</p></div>
+  <div class="card"><img src="images/Dragonite.jpeg" alt="Dragonite"><p>Dragonite 🐉</p></div>
+  <div class="card"><img src="images/Ice Rider Calyrex.jpeg" alt="Ice Rider Calyrex"><p>Ice Rider Calyrex ❄️</p></div>
+</section>
 
-.toggle {
-  background:none;
-  border:1px solid var(--text);
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-}
+<!-- Footer -->
+<footer class="footer">
+  <hr>
+  <p>Contact us: <a href="mailto:contact.amtcg@gmail.com">contact.amtcg@gmail.com</a></p>
+</footer>
 
-/* Hero */
-.hero { text-align:center; padding:120px 20px; }
-.hero h1 { font-size:64px; }
-.hero p { opacity:0.7; margin-bottom:30px; }
-.buttons button {
-  margin:0 10px; padding:12px 24px; border:none; border-radius:12px;
-  font-weight:600; cursor:pointer; transition:0.3s;
-}
-.buttons button:nth-child(1) { background:var(--accent); color:white; }
-.buttons button:nth-child(1):hover { transform:scale(1.05); }
-button.tiktok { background:#69C9D0; color:white; }
-button.tiktok:hover { background:#45AAB8; transform:scale(1.05); }
-
-/* Grid */
-.grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap:24px; padding:40px;
-}
-.card {
-  background:var(--card); backdrop-filter:blur(20px); border-radius:20px; padding:16px;
-  transition:0.5s; text-align:center;
-}
-.card img { width:100%; border-radius:12px; transition:0.5s; }
-.card:hover { transform:scale(1.08) rotate(-2deg); box-shadow:0 20px 30px rgba(0,0,0,0.25); }
-.card:hover img { transform:scale(1.1) rotate(-2deg); }
-
-/* Padajúce karty */
-.card-bg {
-  position:absolute; width:80px; height:120px; background-size:cover; top:-150px;
-  animation:fall linear infinite;
-}
-@keyframes fall { 0%{transform:translateY(0) rotate(0deg);} 100%{transform:translateY(100vh) rotate(360deg);} }
-
-/* Vyhľadávanie */
-.search { text-align:center; margin:30px 0; }
-#searchInput {
-  width:250px; padding:10px 15px; font-size:16px; border-radius:8px; border:1px solid var(--accent); outline:none; transition:0.3s;
-}
-#searchInput:focus { border-color:#ff4d6d; box-shadow:0 0 5px #ff4d6d; }
-
-/* Subscribe */
-.subscribe-box { display:flex; justify-content:center; gap:10px; margin-top:20px; }
-.subscribe-box input { padding:12px; border-radius:8px; border:none; width:220px; font-size:14px; }
-.subscribe-btn { padding:12px 20px; border:none; border-radius:8px; background:#ff4d6d; color:white; font-weight:600; cursor:pointer; transition:all 0.3s ease; }
-.subscribe-btn:hover { transform:scale(1.1); background:#ff2e55; box-shadow:0 5px 20px rgba(255,77,109,0.5); }
-
-/* Footer */
-.footer { text-align:center; padding:20px; margin-top:40px; font-size:16px; color:var(--text); }
-.footer hr { border:1px solid var(--accent); margin-bottom:10px; width:80%; margin:auto; }
-.footer a { color:var(--accent); text-decoration:none; font-weight:600; }
-.footer a:hover { text-decoration:underline; }
-
-/* Horná lišta */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  z-index: 1000;
-}
-
-/* Logo */
-.navbar .logo {
-  height: 50px;
-  width: auto;
-}
-
-/* Odkazy ako tlačidlá */
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-align: center;
-}
-
-/* Individuálne farby tlačidiel */
-.nav-links a:nth-child(1) { background: linear-gradient(45deg,#4f46e5,#8b5cf6); } /* Gallery */
-.nav-links a:nth-child(2) { background: linear-gradient(45deg,#ff4d6d,#ff2e55); } /* Cardmarket */
-.nav-links a:nth-child(3) { background: linear-gradient(45deg,#69c9d0,#45aab8); } /* TikTok */
-.nav-links a:nth-child(4) { background: linear-gradient(45deg,#22c55e,#16a34a); } /* Download App */
-
-/* Hover efekt pre všetky tlačidlá */
-.nav-links a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
+<script src="script.js"></script>
+</body>
+</html>
