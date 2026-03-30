@@ -182,20 +182,3 @@ button.tiktok:hover { background:#45AAB8; transform:scale(1.05); }
   border-color: #ff4d6d;
   box-shadow: 0 0 5px #ff4d6d;
 }
-
-.contact-btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #ff4d6d;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-  transform: scale(1.05);
-  background: #ff2e55;
-  box-shadow: 0 5px 20px rgba(255,77,109,0.5);
-}
