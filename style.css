@@ -153,3 +153,49 @@ button.tiktok:hover { background:#45AAB8; transform:scale(1.05); }
   color: var(--text);
   opacity: 0.8;
 }
+.contact {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--bg);
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto 0 auto;
+}
+
+.contact-box input,
+.contact-box textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+  border-color: #ff4d6d;
+  box-shadow: 0 0 5px #ff4d6d;
+}
+
+.contact-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d6d;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  background: #ff2e55;
+  box-shadow: 0 5px 20px rgba(255,77,109,0.5);
+}
